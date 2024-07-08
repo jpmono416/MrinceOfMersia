@@ -18,7 +18,7 @@ func _physics_process(delta):
 
 	if !Input.get_axis("ui_left", "ui_right"):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		
+
 	# Get input for movement
 	if Input.is_action_pressed("move_right"):
 		velocity.x = SPEED
@@ -28,8 +28,6 @@ func _physics_process(delta):
 		velocity.y = SPEED
 	if Input.is_action_pressed("ui_up"):
 		velocity.y = SPEED
-
-
 
 	# Handle animation changes
 	if velocity.length() > 0:
@@ -51,6 +49,6 @@ func _physics_process(delta):
 	else:
 		if animationPlayer.current_animation != "Idle":
 			animationPlayer.play("Idle")
-	
+
 	# Apply movement
 	move_and_slide()
