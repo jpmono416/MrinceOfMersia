@@ -6,6 +6,12 @@ const SPEED = 220
 const JUMP_VELOCITY = -515
 
 func _physics_process(delta):
+	handleMovement(delta)
+	handleAnimations()
+	move_and_slide()
+
+
+func handleMovement(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -30,6 +36,7 @@ func _physics_process(delta):
 		velocity.y = SPEED
 
 	# Handle animation changes
+func handleAnimations():
 	if velocity.length() > 0:
 		if abs(velocity.x) > abs(velocity.y):
 			if animationPlayer.current_animation != "Run" && is_on_floor():
