@@ -3,7 +3,7 @@ extends CharacterBody2D
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var animationPlayer = $AnimationPlayer
 const SPEED = 200
-const JUMP_VELOCITY = -400
+const JUMP_VELOCITY = -500
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -37,8 +37,12 @@ func _physics_process(delta):
 			if animationPlayer.current_animation != "Run" && is_on_floor():
 				animationPlayer.play("Run")
 		else:
-			if animationPlayer.current_animation != "Jump":
-				animationPlayer.play("Jump")
+			if velocity.y > 0:
+				if animationPlayer.current_animation != "Fall":
+					animationPlayer.play("Fall")
+			else:
+				if animationPlayer.current_animation != "Jump":
+					animationPlayer.play("Jump")
 
 		if velocity.x < 0:
 			$Sprite2D.flip_h = true # Flip sprite for left movement
