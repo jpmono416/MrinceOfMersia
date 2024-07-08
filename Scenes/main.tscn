@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://deijkvxx2l0qf"]
+[gd_scene load_steps=7 format=3 uid="uid://deijkvxx2l0qf"]
 
 [ext_resource type="PackedScene" uid="uid://coygm3edc3w5t" path="res://Scenes/player.tscn" id="1_joopb"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_qgy7d"]
 [ext_resource type="Texture2D" uid="uid://4d75fpvegfih" path="res://Assets/Art/Tileset/00Atlas.png" id="3_dwq8g"]
+[ext_resource type="PackedScene" uid="uid://dajbb2toxlv0h" path="res://Scenes/enemy.tscn" id="4_jm6ac"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ff5tr"]
 texture = ExtResource("3_dwq8g")
@@ -357,6 +358,10 @@ position = Vector2(-4, 0)
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 position = Vector2(4, 0)
 zoom = Vector2(2, 2)
+drag_horizontal_enabled = true
 
 [node name="PhantomCameraHost" type="Node" parent="CharacterBody2D/Camera2D"]
 script = ExtResource("2_qgy7d")
+
+[node name="CharacterBody2D2" parent="." instance=ExtResource("4_jm6ac")]
+position = Vector2(-98, 54)
