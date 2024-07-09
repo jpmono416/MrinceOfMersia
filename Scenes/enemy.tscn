@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bpmf52oagsr6i"]
+[gd_scene load_steps=17 format=3 uid="uid://dajbb2toxlv0h"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_0kx7w"]
 [ext_resource type="Texture2D" uid="uid://ggt83g8xxas" path="res://Assets/Character/Fire_Warrior-Sheet.png" id="2_jajbj"]
