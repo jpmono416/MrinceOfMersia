@@ -3,7 +3,7 @@ extends CharacterBody2D
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var animationPlayer = $AnimationPlayer
 const SPEED = 220
-const JUMP_VELOCITY = -515
+const JUMP_VELOCITY = -315
 
 func _physics_process(delta):
 	handleMovement(delta)

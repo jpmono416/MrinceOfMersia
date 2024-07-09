@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bpmf52oagsr6i"]
+[gd_scene load_steps=17 format=3 uid="uid://bpmf52oagsr6i"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_0kx7w"]
 [ext_resource type="Texture2D" uid="uid://ggt83g8xxas" path="res://Assets/Character/Fire_Warrior-Sheet.png" id="2_jajbj"]
@@ -9,6 +9,7 @@
 [ext_resource type="Animation" uid="uid://bd7t3rewd2f3g" path="res://Animations/Enemies/EnemyAttack.res" id="5_aytyg"]
 [ext_resource type="Animation" uid="uid://biqlk71kev1vf" path="res://Animations/Player/Jump.res" id="5_py0oi"]
 [ext_resource type="Animation" uid="uid://d1paxp3s31qtc" path="res://Animations/Player/Run.res" id="6_4x8oc"]
+[ext_resource type="Animation" uid="uid://dgb40040mts6l" path="res://Animations/Enemies/EnemyWalk.res" id="6_vfmop"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ra0gh"]
 height = 46.0
@@ -37,7 +38,8 @@ _data = {
 _data = {
 "EnemyAttack": ExtResource("5_aytyg"),
 "EnemyIdle": ExtResource("4_arpnj"),
-"EnemyRun": ExtResource("3_2ctnq")
+"EnemyRun": ExtResource("3_2ctnq"),
+"EnemyWalk": ExtResource("6_vfmop")
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k4x61"]
@@ -49,11 +51,12 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bu78o"]
-size = Vector2(382, 63.5)
+size = Vector2(498, 63.5)
 
 [node name="Enemy" type="CharacterBody2D"]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 3
+safe_margin = 1.0
 script = ExtResource("1_0kx7w")
 metadata/_edit_vertical_guides_ = [12.0]
 
