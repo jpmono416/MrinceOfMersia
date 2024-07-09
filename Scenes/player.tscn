@@ -98,8 +98,10 @@ _data = {
 "Run": SubResource("Animation_q776v")
 }
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
-collision_mask = 3
+[node name="Player" type="CharacterBody2D"]
+collision_mask = 7
+floor_stop_on_slope = false
+floor_max_angle = 3.14159
 script = ExtResource("1_eh1se")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
